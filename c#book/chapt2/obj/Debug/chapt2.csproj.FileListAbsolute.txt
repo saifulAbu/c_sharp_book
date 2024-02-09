@@ -1,0 +1,7 @@
+C:\Users\saifabu\OneDrive - Microsoft\Desktop\codebase\c#book\chapt2\bin\Debug\chapt2.exe.config
+C:\Users\saifabu\OneDrive - Microsoft\Desktop\codebase\c#book\chapt2\bin\Debug\chapt2.exe
+C:\Users\saifabu\OneDrive - Microsoft\Desktop\codebase\c#book\chapt2\bin\Debug\chapt2.pdb
+C:\Users\saifabu\OneDrive - Microsoft\Desktop\codebase\c#book\chapt2\obj\Debug\chapt2.csproj.AssemblyReference.cache
+C:\Users\saifabu\OneDrive - Microsoft\Desktop\codebase\c#book\chapt2\obj\Debug\chapt2.csproj.CoreCompileInputs.cache
+C:\Users\saifabu\OneDrive - Microsoft\Desktop\codebase\c#book\chapt2\obj\Debug\chapt2.exe
+C:\Users\saifabu\OneDrive - Microsoft\Desktop\codebase\c#book\chapt2\obj\Debug\chapt2.pdb
