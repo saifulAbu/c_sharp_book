@@ -20,6 +20,102 @@ namespace chapt2
             // FormatHex();
             // LocalVar();
             // ObjectType();
+            // DateTimeex();
+            // StringExperiment();
+            // StringEql();
+            ProcessByte();
+
+        }
+
+        static void ProcessByte() {
+            byte b1 = 100, b2 = 100;
+
+            byte c1 = checked((byte)Add(b1, b2));
+        }
+
+        static int Add(int i, int j)
+        {
+            return i + j;
+        }
+
+        static void StringEql() 
+        {
+            string s1 = "hello";
+            Console.WriteLine(s1 == "hello");
+            Console.WriteLine(s1 == "Hello");
+            
+            Console.WriteLine(s1.CompareTo("hello"));
+            Console.WriteLine(s1.CompareTo("Hello"));
+            Console.WriteLine("Hello".CompareTo("hello"));
+
+            Console.WriteLine(s1.Equals("hello"));
+            Console.WriteLine(s1.Equals("Hello"));
+
+            string s2 = "HELLO";
+
+            Console.WriteLine();
+            Console.WriteLine(s1.IndexOf("E", StringComparison.InvariantCultureIgnoreCase));
+
+            //Console.WriteLine(s1.Equals("hello"));
+            //Console.WriteLine(s1.Equals("Hello"));
+
+
+
+
+
+
+        }
+
+        static void StringExperiment()
+        {
+            string str0 = "priyota is my spouse and love, i take refuge to her!";
+
+            string str1 = str0.Replace("priyota", "buddha");
+
+            string str3 = str1.Replace("her", "him");
+
+            Console.WriteLine(str3);
+
+            Console.WriteLine("string interpolation");
+
+            string str = string.Format("{0} kierkgard says no matter what you do, you {1}", "soren", "regret");
+
+            Console.WriteLine(str);
+
+            string bdh = "buddha";
+
+            string ws = "wise";
+
+            string strb = $"{bdh} says suffering has an end given you act {ws}";
+
+            Console.WriteLine(strb);
+
+            Console.WriteLine("string interpolator  class");
+
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append(bdh);
+            stringBuilder.Append(" is my spouse");
+            stringBuilder.Append(" buddha and mara lives in me");
+            stringBuilder.Append(" without right action, life is dull");
+
+            Console.WriteLine(stringBuilder);
+
+            string verb = @"
+                what is in life 
+                        if there is 
+                                no peace!
+                peace is the highest happiness!!!!
+
+            ";
+
+            Console.WriteLine(verb);
+
+
+        }
+
+        static void DateTimeex() { 
+            DateTime dt = new DateTime(1986, 12, 25);
+            Console.WriteLine("The day of week {0} day of year {1} day {2}", dt.DayOfWeek, dt.DayOfYear, dt.Day);
         }
 
         static void ObjectType()
