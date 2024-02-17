@@ -23,7 +23,62 @@ namespace chapt2
             // DateTimeex();
             // StringExperiment();
             // StringEql();
-            ProcessByte();
+            //ProcessByte();
+            // LinqQuery();
+            Looping();
+
+        }
+
+        private static void Looping()
+        {
+            for (int i = 0; i < 10; i++) 
+            { 
+                Console.WriteLine(i);
+            }
+
+            string[] cars = { "tesla", "audi", "bmw", "toyota", "honda" };
+
+            foreach (string car in cars)
+            {
+                Console.WriteLine(car);
+            }
+
+            int choice = 1;
+
+            while (choice != 1) 
+            { 
+                Console.WriteLine("in while");
+                Console.WriteLine("are you done? [0] no [1] yes");
+                choice = int.Parse(Console.ReadLine());
+            }
+
+            // do while
+            do 
+            {
+                Console.WriteLine("in do while");
+                Console.WriteLine("are you done? [0] no [1] yes");
+                choice = int.Parse(Console.ReadLine());
+            } while (choice != 1);
+        }
+
+        static void LinqQuery()
+        {
+            int[] numbers = { 10, 30, 20, 40, 1, 2, 3, 8 };
+            
+            var subset = from i in numbers where i > 10 select i;
+
+            Console.WriteLine("values in subset {0}", subset);
+
+            foreach (var i in subset) 
+            { 
+                Console.Write("{0} ", i);
+            }
+
+            Console.WriteLine();
+            
+            Console.WriteLine("Subset is of type {0}", subset.GetType().Name);
+
+            Console.WriteLine("Subset is defined in {0}", subset.GetType().Namespace);
 
         }
 
