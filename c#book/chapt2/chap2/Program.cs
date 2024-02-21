@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -25,8 +26,88 @@ namespace chapt2
             // StringEql();
             //ProcessByte();
             // LinqQuery();
-            Looping();
+            // Looping();
+            // IfElse();
+            // SwitchCase();
+            Color('y');
 
+        }
+
+        private static void Color(char colorband) {
+            string color = null;
+
+            color = colorband switch
+            {
+                'v' => "violet",
+                'i' => "indigo",
+                'b' => "blue",
+                'g' => "green",
+                'y' => "yellow",
+                'o' => "orange",
+                'r' => "red",
+                _ => "unknown"
+            };
+
+            Console.WriteLine(color);
+        }
+
+        private static void SwitchCase()
+        {
+            int choice = 1;
+            switch (choice)
+            {
+                case 0:
+                    Console.WriteLine("case 0");
+                    break;
+                case 1:
+                    Console.WriteLine("case 1");
+                    goto case 4;
+                case 2:
+                    Console.WriteLine("case 2");
+                    goto case default;
+                case 3:
+                    
+                case 4:
+                    Console.WriteLine("case 4");
+                    break;
+                default:
+                    Console.WriteLine("default case");
+                    break;
+            }
+        }
+
+        private static void IfElse()
+        {
+            string buddha = "i take refuge to the buddha!";
+
+            if (buddha.Length > 0)
+            {
+                Console.WriteLine(buddha);
+            }
+            else
+            {
+                Console.WriteLine("sugata");
+            }
+
+            int value = 01_000;
+
+            if (value is int nemoValue)
+            {
+                Console.WriteLine($"here is my value {nemoValue}");
+            }
+
+            object testItem = 123;
+            Type t = typeof(string);
+            char c = 'c';
+            if (t is Type) 
+            {
+                Console.WriteLine($"{t} is a type");
+            }
+
+            if (c is >= 'a' and < 'z' or >= 'A' and < 'Z') 
+            {
+                Console.WriteLine("thinking about it was the hard part!");
+            }
         }
 
         private static void Looping()
