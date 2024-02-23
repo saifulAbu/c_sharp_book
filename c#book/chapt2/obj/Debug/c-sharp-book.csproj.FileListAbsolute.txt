@@ -1,0 +1,7 @@
+C:\gitrepo\c_sharp_book\c#book\chapt2\bin\Debug\chapt2.exe.config
+C:\gitrepo\c_sharp_book\c#book\chapt2\bin\Debug\chapt2.exe
+C:\gitrepo\c_sharp_book\c#book\chapt2\bin\Debug\chapt2.pdb
+C:\gitrepo\c_sharp_book\c#book\chapt2\obj\Debug\c-sharp-book.csproj.AssemblyReference.cache
+C:\gitrepo\c_sharp_book\c#book\chapt2\obj\Debug\c-sharp-book.csproj.CoreCompileInputs.cache
+C:\gitrepo\c_sharp_book\c#book\chapt2\obj\Debug\chapt2.exe
+C:\gitrepo\c_sharp_book\c#book\chapt2\obj\Debug\chapt2.pdb

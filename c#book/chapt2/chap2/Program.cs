@@ -11,7 +11,7 @@ namespace chapt2
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main1(string[] args)
         {
             //PrintSys();
             //char c = char.Parse("z");
@@ -29,8 +29,26 @@ namespace chapt2
             // Looping();
             // IfElse();
             // SwitchCase();
-            Color('y');
+            //Color('y');
+            Console.WriteLine(RockPaperScissors("rock", "scissors"));
+            Console.WriteLine(RockPaperScissors("paper", "scissors"));
+            Console.WriteLine(RockPaperScissors("scissors", "scissors"));
 
+        }
+
+        static string RockPaperScissors(string first, string second)
+        {
+            return (first, second) switch
+            {
+                ("rock", "paper") => "paper wins",
+                ("rock", "scissors") => "rock wins",
+                ("paper", "rock") => "paper wins",
+                ("paper", "scissors") => "scissors wins",
+                ("scissors", "rock") => "rock wins",
+                ("scissors", "paper") => "scissors wins",
+                _ => "tie",
+
+            };
         }
 
         private static void Color(char colorband) {
