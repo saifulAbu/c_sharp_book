@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,7 +16,113 @@ namespace chapt2.chap4
             // ArrayOfObjects();
             //RectMultiDimArr();
             //JaggedArray();
-            ArrayArgs();
+            // ArrayArgs();
+            //ArrayFunc();
+            //Console.WriteLine("result of fun in fun {0}", InnerFunction(10, 20));
+            CallerExpMeth();
+            
+        }
+
+        private static void CallerExpMeth()
+        { 
+            int x = 0;
+            int y = 0;
+            ExpMethodsNoRef(x, y);
+
+            System.Console.WriteLine($"after calling no ref method {x} and {y}");
+            int z = 0;
+            ExpMethodsOut(x, y, out z);
+
+            System.Console.WriteLine($"after calling no ref method x: {x} and y: {y} and z: {z}");
+
+            z = -9;
+            //call with discard
+            ExpMethodsOut(x, y, out _);
+
+            System.Console.WriteLine($"after calling no ref method x: {x} and y: {y} and z: {z}");
+
+            string saif = "saif";
+            string nemo = "nemo";
+
+            Console.WriteLine($"before call ExpMethodRef saif: {saif}, nemo: {nemo}");
+            ExpMethodRef(ref saif, ref nemo);
+            Console.WriteLine($"after call ExpMethodRef saif: {saif}, nemo: {nemo}");
+            
+            x = 5; y = 2;
+            ExpMethodIn(in x, in y , out z);
+            System.Console.WriteLine($"after calling ExpMethodInmethod x: {x} and y: {y} and z: {z}");
+
+        }
+
+        private static void ExpMethodIn(in int x, in int y, out int z)
+        {
+            z = x + y;
+        }
+
+
+        private static void ExpMethodRef(ref string s0, ref string s1)
+        {
+            string temp;
+            temp = s0;
+            s0 = s1;
+            s1 = temp;
+        }
+
+        private static void ExpMethodsNoRef(int x, int y)
+        {
+            x = 10;
+            y = 20;
+        }
+
+        private static void ExpMethodsOut(int x, int y, out int res)
+        {
+            x = 10;
+            y = 20;
+            res = x + y;
+        }
+
+        private static int InnerFunction(int x, int y)
+        {
+            int temp = Add(x, y);
+            return temp * 0; // everything causes suffering and eveuntually everything leads to zero
+
+            static int Add(int x, int y) { 
+                return x + y;
+            }
+        }
+
+        private static void IndexPlay()
+        {
+            int[] arr = { 1, 2, 3, 4, 5 };
+
+           // var p = arr[0..2];
+
+        }
+        private static void ArrayFunc()
+        {
+            char[] arr = ['a', 'b', 'c', 'd'];
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
+            Console.WriteLine();
+
+            Array.Reverse(arr);
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
+            Console.WriteLine();
+
+
+            Array.Clear(arr, 1, 3);
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
+            Console.WriteLine();
         }
 
         private static void ArrayArgs()
