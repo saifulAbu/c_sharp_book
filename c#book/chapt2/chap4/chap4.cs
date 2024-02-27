@@ -19,8 +19,80 @@ namespace chapt2.chap4
             // ArrayArgs();
             //ArrayFunc();
             //Console.WriteLine("result of fun in fun {0}", InnerFunction(10, 20));
-            CallerExpMeth();
-            
+            //CallerExpMeth();
+            //MethExpParamsCaller();
+            //OptionalParams("saif");
+            //OptionalParams("siddhartha", "trained");
+            //NamedParmas("sid", "saif");
+            //NamedParmas(last: "saif", first: "sid");
+            //OverLoading(1, 2);
+            //OverLoading((int) 1.0f, (int) 2.0f);
+            //ArgNull("buddha", 0);
+            //ArgNull(null, 0);
+        }
+
+        enum MindTypeEnum { 
+            Untrained,
+            SemiTrained,
+            Trained,
+            Fullyenlightened
+        }
+
+        private static void ArgNull(string arg, int v)
+        {
+            if (v == 0)
+            {
+                if (arg == null)
+                {
+                    throw new ArgumentNullException(arg);
+                }
+            }
+        }
+
+        private static void OverLoading(int x, int y)
+        { 
+            Console.WriteLine("int version called");
+        }
+
+        private static void OverLoading(double x, double y)
+        {
+            Console.WriteLine("double version called");
+        }
+        private static void NamedParmas(string first, string last)
+        {
+            Console.WriteLine($"firstName: {first}, lastName: {last}");
+        }
+
+        private static void OptionalParams(string name, string type="untrained")
+        {
+            Console.WriteLine($"{name} has an {type} mind");
+        }
+
+        private static void MethExpParamsCaller()
+        {
+            int res = MethExpParams(1, 2, 3, 4);
+            Console.WriteLine($"first sum is {res}");
+
+            res = 0;
+
+            res = MethExpParams([1, 2, 3, 4]);
+            Console.WriteLine($"second sum is {res}");
+
+            res = 0;
+            res = MethExpParams(new int[] {1, 2, 3, 4});
+            Console.WriteLine($"third sum is {res}");
+
+
+        }
+
+        private static int MethExpParams(params int[] arr)
+        {
+            int res = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                res += arr[i];
+            }
+            return res;
         }
 
         private static void CallerExpMeth()
