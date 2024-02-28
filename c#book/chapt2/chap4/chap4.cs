@@ -29,6 +29,10 @@ namespace chapt2.chap4
             //OverLoading((int) 1.0f, (int) 2.0f);
             //ArgNull("buddha", 0);
             //ArgNull(null, 0);
+            // EnumMeth(MindTypeEnum.Trained);
+            EvalualteEnum(MindTypeEnum.SemiTrained);
+            EvalualteEnum(Console.BackgroundColor);
+            EvalualteEnum(DayOfWeek.Wednesday);
         }
 
         enum MindTypeEnum { 
@@ -36,6 +40,49 @@ namespace chapt2.chap4
             SemiTrained,
             Trained,
             Fullyenlightened
+        }
+
+        private static void EvalualteEnum(Enum e)
+        { 
+            Console.WriteLine($"information about {e.GetType().Name}. full name {e.GetType().FullName}");
+            Console.WriteLine($"underlying storage type {Enum.GetUnderlyingType(e.GetType()).Name}");
+
+            Type tp = typeof(MindTypeEnum);
+            Type tp2 = e.GetType();
+
+            Array enumData = Enum.GetValues(e.GetType());
+            Console.WriteLine($"the enum {e.GetType().Name} has {enumData.Length} values");
+
+            for (int i = 0; i < enumData.Length; i++) { 
+                Console.WriteLine($"Name : {enumData.GetValue(i)}, Value : {(int)(enumData.GetValue(i))}");
+            }
+        }
+        private static void EnumMeth(MindTypeEnum mind)
+        { 
+            switch (mind)
+            {
+                case MindTypeEnum.Untrained:
+                    Console.WriteLine("an untrained mind, lots of potential");
+                    break;
+                case MindTypeEnum.SemiTrained:
+                    Console.WriteLine("semi trained mind... on right way");
+                    break;
+                case MindTypeEnum.Trained:
+                    Console.WriteLine("anumodhana! trained mind. hang in there!");
+                    break;
+                case MindTypeEnum.Fullyenlightened:
+                    Console.WriteLine("practiced well venerable! sadhu sadhu sadhu");
+                    break;
+                _: 
+                    Console.WriteLine("who knows what i mean here!");
+                    break;
+            }
+
+            Console.WriteLine($"type used for mind {mind.GetType()}, storage type {Enum.GetUnderlyingType(mind.GetType())}");
+
+            Console.WriteLine($"storage type of MindTypeEnum is {Enum.GetUnderlyingType(typeof(MindTypeEnum))}");
+
+            Console.WriteLine($"name of the enum {mind} has value {(int)(mind)}");
         }
 
         private static void ArgNull(string arg, int v)
